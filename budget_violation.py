@@ -12,14 +12,12 @@ class BudgetViolation:
         self.time = {"Month": 1, "Quarter": 3, "Year": 12}
 
     def check_violation_investments(self):                                          #Check all violations in the investment.csv
-        """"Iterate over all the data in investments."""
         with open(self.investment_file, 'r') as investments:                        #Opening a file in reading mode
             read_invests = csv.DictReader(investments)                              #Return a reader object which will traverse over lines in the given csvfile
             for invest in read_invests:                                             #Traversing over all the data with help if reader object
                 self.check_violation(invest)                                        #Checking violation
 
-    def check_violation(self, invest):
-        """Iterate over the budget rules and find out the invalid investments."""
+    def check_violation(self, invest):                                                                  #Funtion for traversing over the budget rules and find out the invalid investments
         invest_date = datetime.datetime.strptime(invest['Date'], '%d/%m/%Y')                            #strptime creates a datetime object from a string and returns a object of a combination of a date and a time
         with open(self.budget_file, 'r') as budgets:                                                    #Opening budget.csv in read mode
             read_budgets = csv.DictReader(budgets)                                                      # Return a reader object for traversal
