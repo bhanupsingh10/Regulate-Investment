@@ -44,4 +44,4 @@ python budget_violation.py
 2. Path of the investment.csv file
 ## Output
 The following image shows the output after the successful execution of the program.
-![Output Image](Screenshot (94).png "Output Image")
+![Output Image](https://github.com/bhanupsingh10/Regulate-Investment/blob/main/Screenshot%20(94).png "Output Image")
